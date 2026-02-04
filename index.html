@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Psicóloga Rafaela Lamego | Psicoterapia Online</title>
+  <meta name="description" content="Psicoterapia online para adolescentes (14+) e adultos. Atendimento acolhedor com orientação psicanalítica. Agende pelo WhatsApp." />
+
+  <!--
+    COMO EDITAR (rápido):
+    1) Troque as imagens nos <img src="..."> por links/arquivos seus (ex.: fotos/foto1.jpg).
+    2) Ajuste os textos entre colchetes se quiser refinar tom/temas.
+    3) O CTA do WhatsApp está em: WHATSAPP_URL (procure por "WHATSAPP_URL").
+  -->
+
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --card:#111a2e;
+      --card2:rgba(255,255,255,.05);
+      --text:#eaf0ff;
+      --muted:#a9b4d0;
+      --border:rgba(255,255,255,.10);
+      --accent:#7c5cff;
+      --accent2:#4dd6ff;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(124,92,255,.35), transparent 55%),
+        radial-gradient(900px 500px at 90% 10%, rgba(77,214,255,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+    }
+
+    a{ color:inherit; }
+    .wrap{ width:min(1040px, 100%); margin:0 auto; padding: 22px; }
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding: 10px 0 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(124,92,255,.92), rgba(77,214,255,.72));
+      display:grid; place-items:center;
+      font-weight:800; letter-spacing:.5px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      flex:0 0 auto;
+    }
+    .brand strong{ display:block; font-size:14px; line-height:1.1; }
+    .brand span{ display:block; font-size:12px; color:var(--muted); margin-top:2px; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight:700;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); }
+    .btn.primary{
+      background: rgba(124,92,255,.18);
+      border-color: rgba(124,92,255,.45);
+    }
+    .btn.primary:hover{ background: rgba(124,92,255,.24); }
+
+    .hero{
+      border:1px solid var(--border);
+      background: rgba(17,26,46,.78);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .topbar{ flex-wrap:wrap; justify-content:flex-start; }
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; color: rgba(255,255,255,.75);
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      padding: 7px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: rgba(77,214,255,.9);
+      box-shadow: 0 0 0 4px rgba(77,214,255,.12);
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(24px, 4vw, 38px);
+      line-height:1.15;
+      letter-spacing: -0.02em;
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      line-height:1.6;
+      font-size: 15px;
+    }
+
+    .ctaRow{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
+    .micro{
+      margin-top:10px;
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+      line-height:1.4;
+    }
+
+    .photoCard{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      overflow:hidden;
+      display:grid;
+      grid-template-rows: 1fr auto;
+      min-height: 220px;
+    }
+    .photoCard img{
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      background: linear-gradient(135deg, rgba(124,92,255,.28), rgba(77,214,255,.16));
+    }
+    .photoCap{
+      padding: 10px 12px;
+      color: rgba(255,255,255,.75);
+      font-size: 12px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 860px){
+      .grid3{ grid-template-columns: 1fr; }
+    }
+
+    .pill{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .pill strong{ display:block; font-size: 14px; margin-bottom:6px; }
+    .pill p{ margin:0; color: var(--muted); line-height:1.55; font-size: 13px; }
+
+    section{
+      margin-top: 18px;
+      border:1px solid var(--border);
+      background: rgba(17,26,46,.62);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+    }
+    .sectionTitle{
+      margin:0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .sectionText{
+      margin:0;
+      color: var(--muted);
+      line-height:1.65;
+      font-size: 14px;
+    }
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+      align-items:start;
+    }
+    @media (max-width: 860px){
+      .twoCol{ grid-template-columns: 1fr; }
+    }
+
+    .list{
+      margin:10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .card{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size: 15px;
+    }
+    .card p{ margin:0; color: var(--muted); line-height:1.6; font-size: 14px; }
+
+    .photoRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 860px){
+      .photoRow{ grid-template-columns: 1fr; }
+    }
+
+    .faq details{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-top: 10px;
+    }
+    .faq summary{
+      cursor:pointer;
+      font-weight: 700;
+      font-size: 14px;
+      outline: none;
+    }
+    .faq p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .finalCta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+      padding: 14px;
+      background: rgba(124,92,255,.10);
+      border: 1px solid rgba(124,92,255,.30);
+      border-radius: 16px;
+    }
+
+    footer{
+      margin: 18px 0 10px;
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .footerBox{
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 14px;
+      margin-top: 14px;
+    }
+    .smallLinks{ margin-top: 8px; display:flex; flex-wrap:wrap; gap:10px; }
+    .smallLinks a{
+      color: rgba(255,255,255,.72);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255,255,255,.22);
+    }
+    .smallLinks a:hover{ color: var(--text); border-bottom-color: rgba(255,255,255,.45); }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <a class="brand" href="#topo" aria-label="Ir para o topo">
+        <div class="logo">RL</div>
+        <div>
+          <strong>Psicóloga Rafaela Lamego</strong>
+          <span>Psicoterapia online • Adolesc. (14+) e adultos</span>
+        </div>
+      </a>
+
+      <!-- WHATSAPP_URL -->
+      <a class="btn primary" href="https://wa.me/5524988281774?text=Ol%C3%A1%2C%20Rafaela.%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.%20Posso%20te%20contar%20um%20pouco%20do%20que%20estou%20vivendo%3F" target="_blank" rel="noreferrer">
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+
+    <!-- HERO -->
+    <div id="topo" class="hero">
+      <div class="heroGrid">
+
+        <div>
+          <div class="kicker"><span class="dot"></span> Atendimento online com orientação psicanalítica</div>
+          <h1>Um espaço de escuta para quando as palavras ficam presas — e o viver começa a pesar.</h1>
+          <p class="lead">
+            Na psicoterapia, a gente não “conserta” você: a gente constrói um lugar onde aquilo que retorna como angústia,
+            ansiedade, repetição ou cansaço possa ser nomeado, compreendido e atravessado com tempo e cuidado.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="https://wa.me/5524988281774?text=Ol%C3%A1%2C%20Rafaela.%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.%20Posso%20te%20contar%20um%20pouco%20do%20que%20estou%20vivendo%3F" target="_blank" rel="noreferrer">
+              Agendar sessão
+            </a>
+            <a class="btn" href="#como-funciona">Como funciona</a>
+            <a class="btn" href="#duvidas">Dúvidas frequentes</a>
+          </div>
+
+          <div class="micro">
+            Público: adolescentes a partir de 14 anos e adultos • CRP 05/60956 •
+            Contato: <span style="color:rgba(255,255,255,.80)">Lamegopsic@gmail.com</span>
+          </div>
+
+          <div class="grid3">
+            <div class="pill">
+              <strong>Escuta sem pressa</strong>
+              <p>Um tempo para falar do que pesa, sem roteiro pronto — com acolhimento e profundidade.</p>
+            </div>
+            <div class="pill">
+              <strong>Ir além do sintoma</strong>
+              <p>O que se repete costuma querer dizer algo. A clínica abre caminho para compreender esse sentido.</p>
+            </div>
+            <div class="pill">
+              <strong>Travessia possível</strong>
+              <p>Quando algo ganha nome e lugar, o corpo relaxa, as escolhas se ampliam e o cotidiano respira.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOTO 1 (editável) -->
+        <div class="photoCard" aria-label="Foto principal (substitua pela sua)">
+          <img src="https://via.placeholder.com/900x1200.png?text=FOTO+1+%28substituir%29" alt="Espaço para foto 1 (substituir)" />
+          <div class="photoCap">[Foto profissional • você pode trocar por uma imagem sua]</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PARA QUEM -->
+    <section id="para-quem">
+      <h2 class="sectionTitle">Para quem é a psicoterapia</h2>
+      <p class="sectionText">
+        Para adolescentes (14+) e adultos que sentem que algo está “difícil de sustentar” — por dentro ou nas relações.
+        Às vezes é ansiedade; às vezes é uma inquietação sem nome; às vezes é um cansaço que não passa.
+      </p>
+
+      <div class="twoCol">
+        <div class="card">
+          <h3>Você pode estar vivendo:</h3>
+          <ul class="list">
+            <li>ansiedade, aperto no peito, pensamentos acelerados;</li>
+            <li>tristeza persistente, desânimo, falta de sentido;</li>
+            <li>autocrítica intensa, culpa, sensação de inadequação;</li>
+            <li>dificuldade em dizer “não”, limites confusos;</li>
+            <li>padrões que se repetem nos relacionamentos;</li>
+            <li>conflitos familiares, escolares ou no trabalho;</li>
+            <li>insônia, irritabilidade, estresse constante;</li>
+            <li>mudanças de fase: decisões, luto, separações, recomeços.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Um cuidado importante</h3>
+          <p>
+            A psicoterapia não é uma lista de dicas. É um encontro de fala e escuta onde, pouco a pouco,
+            você pode se aproximar do que te atravessa — e construir novas possibilidades de estar no mundo.
+          </p>
+          <div class="ctaRow" style="margin-top:12px;">
+            <a class="btn primary" href="https://wa.me/5524988281774?text=Ol%C3%A1%2C%20Rafaela.%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.%20Posso%20te%20contar%20um%20pouco%20do%20que%20estou%20vivendo%3F" target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VANTAGENS DO ONLINE (curta e objetiva) -->
+    <section id="online">
+      <h2 class="sectionTitle">Vantagens do atendimento online</h2>
+      <p class="sectionText">
+        O online facilita a continuidade do processo — com segurança, praticidade e o cuidado de preservar seu ritmo.
+      </p>
+
+      <div class="grid3">
+        <div class="pill">
+          <strong>Mais acessível</strong>
+          <p>Você faz a sessão de onde estiver, sem deslocamento e com menos barreiras para começar.</p>
+        </div>
+        <div class="pill">
+          <strong>Mais constância</strong>
+          <p>Fica mais fácil manter a frequência, mesmo em semanas corridas ou em viagens.</p>
+        </div>
+        <div class="pill">
+          <strong>Um espaço reservado</strong>
+          <p>Com um ambiente privado e fone de ouvido, a sessão pode ser tão acolhedora quanto presencial.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <h2 class="sectionTitle">Sobre mim</h2>
+      <div class="twoCol">
+        <div>
+          <p class="sectionText">
+            Sou <strong>Rafaela Lamego</strong>, psicóloga (CRP 05/60956). Meu trabalho tem orientação psicanalítica e se apoia
+            na ideia de que cada pessoa tem uma história única — e que o sofrimento não é “fraqueza”, mas um modo de o
+            sujeito tentar dar conta do que o excede.
+          </p>
+          <p class="sectionText" style="margin-top:10px;">
+            Na clínica, eu te acompanho para que sua fala encontre lugar: com acolhimento, ética e respeito ao seu tempo.
+            A proposta não é te encaixar em um padrão, mas sustentar um percurso onde você possa se ouvir de um jeito novo.
+          </p>
+
+          <div class="finalCta">
+            <div>
+              <strong>Quer iniciar?</strong><br/>
+              <span style="color:rgba(255,255,255,.70); font-size:13px;">
+                Me chame no WhatsApp e me conte, do seu jeito, o que te trouxe até aqui.
+              </span>
+            </div>
+            <a class="btn primary" href="https://wa.me/5524988281774?text=Ol%C3%A1%2C%20Rafaela.%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.%20Posso%20te%20contar%20um%20pouco%20do%20que%20estou%20vivendo%3F" target="_blank" rel="noreferrer">Agendar sessão</a>
+          </div>
+        </div>
+
+        <!-- FOTO 2 (editável) -->
+        <div class="photoCard" aria-label="Foto secundária (substitua pela sua)">
+          <img src="https://via.placeholder.com/1200x900.png?text=FOTO+2+%28substituir%29" alt="Espaço para foto 2 (substituir)" />
+          <div class="photoCap">[Foto 2 • pode ser sua, abstrata ou algo que represente acolhimento]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMAS / DEMANDAS -->
+    <section id="temas">
+      <h2 class="sectionTitle">Temas que podem ser trabalhados em análise</h2>
+      <p class="sectionText">
+        A lista abaixo não é um “rótulo”. É só um ponto de partida — o essencial é o que isso significa <em>para você</em>.
+      </p>
+
+      <div class="twoCol" style="margin-top:12px;">
+        <div class="card">
+          <h3>Ansiedade e angústia</h3>
+          <p>
+            Quando o corpo fala por você, quando o pensamento não desacelera, quando o futuro vira ameaça.
+            Na análise, a gente pode localizar o que sustenta essa urgência — e abrir espaços de respiro.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Relacionamentos e repetição</h3>
+          <p>
+            Ciúmes, dependência emocional, medo de abandono, dificuldade de confiar, conflitos recorrentes.
+            Às vezes, o que se repete pede leitura: um modo antigo de se proteger que hoje cobra caro.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Autoestima e autocrítica</h3>
+          <p>
+            A sensação de “nunca ser o suficiente” pode virar uma voz dura por dentro.
+            A clínica ajuda a reconhecer de onde isso vem e como construir uma relação mais gentil consigo.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Fases de mudança</h3>
+          <p>
+            Luto, separações, decisões, transições, escolhas profissionais, conflitos familiares.
+            Mudanças mexem no chão — e a análise pode ser um lugar para atravessar sem se perder de si.
+          </p>
+        </div>
+      </div>
+
+      <!-- FOTO 3 (editável) -->
+      <div class="photoRow">
+        <div class="photoCard" aria-label="Foto 3 (substitua)">
+          <img src="https://via.placeholder.com/1200x800.png?text=FOTO+3+%28substituir%29" alt="Espaço para foto 3 (substituir)" />
+          <div class="photoCap">[Foto 3 • imagem de apoio/ambiente/estética]</div>
+        </div>
+
+        <!-- FOTO 4 (editável) -->
+        <div class="photoCard" aria-label="Foto 4 (substitua)">
+          <img src="https://via.placeholder.com/1200x800.png?text=FOTO+4+%28substituir%29" alt="Espaço para foto 4 (substituir)" />
+          <div class="photoCap">[Foto 4 • imagem de apoio/ambiente/estética]</div>
+        </div>
+      </div>
+
+      <div class="ctaRow" style="margin-top:14px;">
+        <a class="btn primary" href="https://wa.me/5524988281774?text=Ol%C3%A1%2C%20Rafaela.%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.%20Posso%20te%20contar%20um%20pouco%20do%20que%20estou%20vivendo%3F" target="_blank" rel="noreferrer">Agendar pelo WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona">
+      <h2 class="sectionTitle">Como funciona o atendimento online</h2>
+      <p class="sectionText">
+        A psicoterapia é um processo. Ela não exige que você saiba “explicar direito” o que sente —
+        a gente vai construindo isso juntas(os), sessão após sessão.
+      </p>
+
+      <div class="twoCol">
+        <div class="card">
+          <h3>1) Primeiro contato</h3>
+          <p>
+            Você me chama no WhatsApp. Eu te respondo com orientações iniciais, horários disponíveis e combinados
+            para a primeira sessão.
+          </p>
+        </div>
+        <div class="card">
+          <h3>2) Primeira sessão</h3>
+          <p>
+            Um encontro para você falar do que te trouxe e para alinharmos como será o trabalho. Não precisa “se preparar”:
+            basta chegar como você está.
+          </p>
+        </div>
+        <div class="card">
+          <h3>3) Frequência e continuidade</h3>
+          <p>
+            A frequência é combinada de acordo com sua necessidade. Constância costuma fazer diferença porque o cuidado
+            acontece no tempo.
+          </p>
+        </div>
+        <div class="card">
+          <h3>4) Sigilo e ética</h3>
+          <p>
+            O atendimento segue princípios éticos da profissão. A sessão precisa de um ambiente privado e estável —
+            isso favorece sua segurança e presença.
+          </p>
+        </div>
+      </div>
+
+      <div class="finalCta">
+        <div>
+          <strong>Pronta(o) para começar?</strong><br/>
+          <span style="color:rgba(255,255,255,.70); font-size:13px;">Clique e envie a mensagem pronta pelo WhatsApp.</span>
+        </div>
+        <a class="btn primary" href="https://wa.me/5524988281774?text=Ol%C3%A1%2C%20Rafaela.%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.%20Posso%20te%20contar%20um%20pouco%20do%20que%20estou%20vivendo%3F" target="_blank" rel="noreferrer">Agendar sessão</a>
+      </div>
+    </section>
+
+    <!-- DÚVIDAS FREQUENTES -->
+    <section id="duvidas" class="faq">
+      <h2 class="sectionTitle">Dúvidas frequentes</h2>
+
+      <details>
+        <summary>Como sei se a psicoterapia é para mim?</summary>
+        <p>
+          Se algo está insistindo — como angústia, ansiedade, conflitos, repetições ou um mal-estar difícil de nomear —
+          já existe um motivo legítimo para buscar um espaço de escuta. Você não precisa “estar no limite” para começar.
+        </p>
+      </details>
+
+      <details>
+        <summary>Atende adolescentes?</summary>
+        <p>
+          Sim. Atendo adolescentes a partir de 14 anos, com um cuidado especial para o que essa fase traz: mudanças,
+          conflitos, pressões, identidade, relações e escola.
+        </p>
+      </details>
+
+      <details>
+        <summary>Qual plataforma é usada no atendimento online?</summary>
+        <p>
+          Combinamos no primeiro contato a melhor forma para você (ex.: videochamada). O principal é ter privacidade,
+          conexão estável e um lugar reservado.
+        </p>
+      </details>
+
+      <details>
+        <summary>Qual o valor e como funciona o pagamento?</summary>
+        <p>
+          Me chame no WhatsApp que eu te explico valores e formas de pagamento, além de horários disponíveis.
+        </p>
+      </details>
+
+      <details>
+        <summary>Você atende convênio/plano de saúde?</summary>
+        <p>
+          Este atendimento é particular. Se você tiver dúvidas sobre reembolso, pode me perguntar no WhatsApp.
+        </p>
+      </details>
+
+      <details>
+        <summary>Como são remarcações e cancelamentos?</summary>
+        <p>
+          Combinamos essas condições no início do processo, com clareza e respeito. A ideia é preservar seu cuidado
+          e a organização do atendimento.
+        </p>
+      </details>
+
+      <div class="ctaRow" style="margin-top:14px;">
+        <a class="btn primary" href="https://wa.me/5524988281774?text=Ol%C3%A1%2C%20Rafaela.%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.%20Posso%20te%20contar%20um%20pouco%20do%20que%20estou%20vivendo%3F" target="_blank" rel="noreferrer">
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn" href="#contato">Ver contato</a>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <h2 class="sectionTitle">Contato</h2>
+      <p class="sectionText">
+        Para agendar ou tirar dúvidas, o canal principal é o WhatsApp.
+        Se preferir, você também pode enviar um e-mail.
+      </p>
+
+      <div class="twoCol" style="margin-top:12px;">
+        <div class="card">
+          <h3>WhatsApp</h3>
+          <p><strong>(24) 98828-1774</strong></p>
+          <div class="ctaRow" style="margin-top:12px;">
+            <a class="btn primary" href="https://wa.me/5524988281774?text=Ol%C3%A1%2C%20Rafaela.%20Vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.%20Posso%20te%20contar%20um%20pouco%20do%20que%20estou%20vivendo%3F" target="_blank" rel="noreferrer">
+              Enviar mensagem pronta
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>E-mail</h3>
+          <p><strong>Lamegopsic@gmail.com</strong></p>
+          <div class="ctaRow" style="margin-top:12px;">
+            <a class="btn" href="mailto:Lamegopsic@gmail.com?subject=Psicoterapia%20online&body=Ol%C3%A1%2C%20Rafaela.%20Encontrei%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20para%20iniciar%20psicoterapia%20online.">
+              Enviar e-mail
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footerBox">
+        <div><strong>Psicóloga Rafaela Lamego</strong> • CRP 05/60956</div>
+        <div class="smallLinks">
+          <a href="#topo">Topo</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#contato">Contato</a>
+        </div>
+
+        <p style="margin:12px 0 0;">
+          <strong>Em caso de crise, risco imediato ou pensamento suicida:</strong>
+          este site não substitui atendimento de emergência.
+          Procure o <strong>CVV (188)</strong>, o <strong>SAMU (192)</strong> ou o <strong>Corpo de Bombeiros (193)</strong>.
+        </p>
+
+        <p style="margin:10px 0 0;">
+          © <span id="y"></span> — Psicóloga Rafaela Lamego. Atendimento <strong>online</strong> para adolescentes (14+) e adultos.
+        </p>
+      </footer>
+    </section>
+
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
